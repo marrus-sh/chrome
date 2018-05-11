@@ -1,0 +1,767 @@
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace math "http://www.w3.org/1998/Math/MathML";
+@namespace svg "http://www.w3.org/2000/svg";
+
+@font-feature-values Junicode {
+	@styleset {
+		Nordic-Alternates: 1;
+		Enlarged-Minuscules: 6;
+		Oldstyle-Punctuation: 18;
+	}
+}
+
+@keyframes Blink {
+	FROM { Color: Inherit }
+	60% { Color: Transparent }
+	TO { Color: Inherit }
+}
+
+@-moz-document RegExp("(?!https?://(?:www\.)?(?:archiveofourown.org)[/$]).*") {  /*  Don't apply these styles on websites which have better user-configuration mechanisms  */
+	*[Title] {
+		Text-Decoration-Line: Underline;
+		Text-Decoration-Style: Dotted;
+	}
+	*[Title=""] { Text-Decoration-Line: None }
+	*[Role="feed"i] {
+		Box-Sizing: Border-Box;
+		Margin-Inline-Start: Auto;
+		Margin-Inline-End: Auto;
+		Border: Solid;
+		Border: #AA9F7F;
+		Border: Medium;
+		Color: #332714;
+		Background-Color: #EEDDBF;
+		Font-Size: Smaller;
+		Overflow: Auto;
+		Counter-Reset: UserContentParagraph;
+	}
+	*|*:Not(:Lang(en)) > :Lang(en),
+	*|*:Lang(en) { Quotes: "‘" "’" "“" "”" }
+	*|*:Lang("*-fonipa") {
+		Font-Style: Normal;
+		Font-Variant-Alternates: Styleset(Nordic-Alternates);
+	}
+	*|*:Link,
+	*|*:Visited {
+		Color: #443628;
+		Text-Decoration-Line: Underline;
+		Text-Decoration-Style: Dashed;
+	}
+	*|*:Link:Hover,
+	*|*:Visited:Hover {
+		Color: #776335;
+		Text-Decoration-Style: Wavy;
+	}
+	*|*:Link:Active,
+	*|*:Visited:Active {
+		Color: #993232;
+		Text-Decoration-Style: Solid;
+	}
+	ADDRESS {
+		Margin: Auto;
+		Inline-Size: -moz-Fit-Content;
+		Font-Family: Monospace;
+		Text-Align: Left;
+		Hyphens: None;
+	}
+	ARTICLE {
+		Box-Sizing: Border-Box;
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Margin-Inline-Start: Auto;
+		Margin-Inline-End: Auto;
+		Border-Style: Solid;
+		Border-Color: #AA9F7F;
+		Border-Width: Medium;
+		Padding-Block-Start: 12.5CH;
+		Padding-Block-End: 20CH;
+		Padding-Inline-Start: 6EM;
+		Padding-Inline-End: 6EM;
+		Inline-Size: 100%;
+		Max-Inline-Size: 46EM;
+		Color: #332714;
+		Background-Color: #EEDDBF;
+		Overflow: Auto;
+		Text-Align: Justify;
+		Hyphens: Auto;
+		Counter-Reset: UserContentParagraph;
+	}
+	*[Role="feed"i] ARTICLE {
+		Box-Sizing: Content-Box;
+		Margin: 0;
+		Border-Block-Start-Style: None;
+		Border-Block-End-Width: Thin;
+		Border-Inline-Start-Style: None;
+		Border-Inline-End-Style: None;
+		Padding-Block-Start: 2.5CH;
+		Padding-Block-End: 2.5CH;
+		Padding-Inline-Start: 2EM;
+		Padding-Inline-End: 2EM;
+		Inline-Size: Auto;
+		Max-Inline-Size: None;
+	}
+	ASIDE {
+		Font-Size: Smaller;
+		Font-Family: Sans-Serif;
+		Font-Style: Italic;
+		Font-Weight: Lighter;
+		Text-Align: Left;
+	}
+	B { Font-Weight: Bold }
+	BLINK {  /*  "Compatibility"  */
+		Text-Decoration-Line: None;
+		Animation: 1.5S Infinite Step-End Blink;
+	}
+	BLOCKQUOTE {
+		Margin-Block-Start: 1.25CH;
+		Margin-Block-End: 1.25CH;
+		Margin-Inline-Start: 0;
+		Margin-Inline-End: 0;
+		Border-Style: Solid;
+		Border-Color: #887256;
+		Border-Width: Thin;
+		Padding-Block-Start: 2.5CH;
+		Padding-Block-End: 2.5CH;
+		Padding-Inline-Start: 2EM;
+		Padding-Inline-End: 2EM;
+		Color: #332714;
+		Background-Color: #FFF8E3;
+		Font-Style: Italic;
+		Text-Align: Justify;
+	}
+	BLOCKQUOTE::AFTER { Content: No-Close-Quote }
+	BLOCKQUOTE::BEFORE { Content: No-Open-Quote }
+	BLOCKQUOTE BLOCKQUOTE {
+		Border-Block-Start-Style: None;
+		Border-Block-End-Style: None;
+		Border-Inline-Start-Width: Medium;
+		Border-Inline-End-Style: None;
+		Padding-Inline-End: 0;
+	}
+	BLOCKQUOTE BLOCKQUOTE BLOCKQUOTE { Border-Inline-Start-Width: Thin }
+	FIGURE > BLOCKQUOTE { Font-Size: Larger }
+	BODY {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Margin-Inline-Start: 2EM;
+		Margin-Inline-End: 2EM;
+		Color: #332714;
+		Background-Color: #FFF8E3;
+		Font-Size: Medium!IMPORTANT;
+		Counter-Reset: UserContentParagraph;
+	}
+	*[Role="button"i],
+	INPUT[Type="button"i],
+	INPUT[Type="image"i],
+	INPUT[Type="reset"i],
+	BUTTON {
+		Padding-Block-Start: .625CH;
+		Padding-Block-End: .625CH;
+		Padding-Inline-Start: .5EM;
+		Padding-Inline-End: .5EM;
+		Border-Style: Solid;
+		Border-Color: #FFF8E3;
+		Border-Width: Inherit;
+		Color: #FFF8E3;
+		Background-Color: #336633;
+		Font-Family: Inherit;
+		Text-Align: Center;
+	}
+	CAPTION {
+		Margin-Block-Start: 1.25CH;
+		Margin-Block-End: 1.25CH;
+	}
+	CODE {
+		Color: Black;
+		Font-Variant-Numeric: Lining-Nums Tabular-Nums Diagonal-Fractions Slashed-Zero;
+	}
+	COL {
+		Border-Color: Inherit;
+		Border-Width: Inherit;
+	}
+	COL:First-Child {
+		Border-Inline-Start-Style: Solid;
+		Border-Inline-Start-Color: Transparent;
+		Border-Inline-Start-Width: 2EM;
+	}
+	COLGROUP {
+		Border-Color: Inherit;
+		Border-Width: Inherit;
+	}
+	DD {
+		Grid-Column-Start: 2;
+		Grid-Column-End: 3;
+		Box-Sizing: Border-Box;
+		Margin: 0;
+	}
+	DEL,
+	DEL[Title] {
+		Text-Decoration-Line: Line-Through;
+		Text-Decoration-Style: Double;
+	}
+	DFN {
+		Font-Style: Italic;
+		Font-Weight: Bold;
+	}
+	DFN:Target {
+		Margin: 0 -.25EM;
+		Outline-Width: Thin;
+		Outline-Style: Solid;
+		Padding: 0 .25EM;
+		Color: #227002;
+		Background: #FFF8E3;
+	}
+	DIALOG {
+		Padding-Block-Start: 2.5CH;
+		Padding-Block-End: 2.5CH;
+		Padding-Inline-Start: 1EM;
+		Padding-Inline-End: 1EM;
+		Color: #332714;
+		Background-Color: #FFF8E3;
+	}
+	DL {
+		Display: Grid;
+		Grid-Row-Gap: .625CH;
+		Grid-Column-Gap: .5EM;
+		Grid-Template-Columns: MinMax(3.5EM, 7EM) MinMax(60%, 1fr);
+		Clear: Both;
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Inline-Size: 100%;
+		Text-Align: Left;
+	}
+	DL[Hidden] { Display: None }
+	DT {
+		Grid-Column-Start: 1;
+		Grid-Column-End: 2;
+		Box-Sizing: Border-Box;
+		Color: #227002;
+		Hyphens: Auto;
+	}
+	EM,
+	EM[Title] {
+		Font-Style: Inherit;
+		Text-Decoration-Line: Underline;
+	}
+	EM EM,
+	EM EM[Title] {
+		Text-Decoration-Line: Underline;
+		Text-Decoration-Style: Double;
+	}
+	FIGCAPTION {
+		Margin-Block-Start: 2.5CH;
+		Font-Size: X-Small;
+		Font-Variant-Alternates: Styleset(Enlarged-Minuscules);
+		Font-Variant-Numeric: Lining-Nums Proportional-Nums Diagonal-Fractions;
+	}
+	math|Math[Display="block"] + FIGCAPTION { Margin-Block-Start: 0 }
+	FIGURE {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Margin-Inline-Start: Auto;
+		Margin-Inline-End: Auto;
+		Inline-Size: -moz-Fit-Content;
+		Text-Align: Justify;
+	}
+	FOOTER {
+		Margin-Block-Start: 5CH;
+		Font-Size: Smaller;
+		Font-Style: Italic;
+		Text-Align: Right;
+	}
+	BLOCKQUOTE > FOOTER:Last-Child {
+		Margin-Block-Start: 2.5CH;
+		Font-Style: Normal;
+	}
+	H1 {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 0;
+		Font-Size: XX-Large;
+		Font-Weight: Bolder;
+		Font-Variant-Caps: Titling-Caps;
+		Text-Align: Center;
+		Text-Transform: Uppercase;
+		Hyphens: None;
+	}
+	HEADER H1 { Margin-Block-Start: 0 }
+	NAV H1,
+	SECTION H1,
+	H2 {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 5CH;
+		Font-Size: X-Large;
+		Font-Family: Sans-Serif;
+		Font-Weight: Bolder;
+		Text-Align: Center;
+		Hyphens: None;
+	}
+	HEADER NAV H1,
+	HEADER SECTION H1,
+	HEADER H2 {
+		Margin-Block-Start: 0;
+		Margin-Block-End: 0;
+	}
+	NAV SECTION H1,
+	SECTION NAV H1,
+	SECTION SECTION H1,
+	H3 {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Border-Block-End: Thin CurrentColor Solid;
+		Inline-Size: -moz-Fit-Content;
+		Font-Size: Large;
+		Font-Weight: Bolder;
+		Text-Align: Left;
+	}
+	HEADER NAV SECTION H1,
+	HEADER SECTION NAV H1,
+	HEADER SECTION SECTION H1,
+	HEADER H3 { Margin-Block-Start: 0 }
+	NAV SECTION SECTION H1,
+	SECTION NAV SECTION H1,
+	SECTION SECTION NAV H1,
+	SECTION SECTION SECTION H1,
+	H4 {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Font-Size: Medium;
+		Font-Variant-Caps: Petite-Caps;
+		Text-Align: Left;
+	}
+	NAV SECTION SECTION SECTION H1,
+	SECTION NAV SECTION SECTION H1,
+	SECTION SECTION NAV SECTION H1,
+	SECTION SECTION SECTION NAV H1,
+	SECTION SECTION SECTION SECTION H1,
+	H5 {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Font-Size: Small;
+		Font-Weight: Bolder;
+		Font-Variant-Caps: Titling-Caps;
+		Text-Align: Left;
+		Text-Transform: Uppercase;
+	}
+	NAV SECTION SECTION SECTION SECTION H1,
+	SECTION NAV SECTION SECTION SECTION H1,
+	SECTION SECTION NAV SECTION SECTION H1,
+	SECTION SECTION SECTION NAV SECTION H1,
+	SECTION SECTION SECTION SECTION NAV H1,
+	SECTION SECTION SECTION SECTION SECTION H1,
+	H6 {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Font-Size: Medium;
+		Font-Style: Italic;
+		Text-Align: Right;
+	}
+	HEADER {
+		Margin-Block-Start: 0;
+		Margin-Block-End: 5CH;
+		Font-Family: Sans-Serif;
+		Text-Align: Center;
+	}
+	HTML {
+		Color: #332714;
+		Background-Color: #FFF8E3;
+		Font-Size: Medium!IMPORTANT;
+		Font-Family: Serif;
+		Font-Synthesis: None;
+	}
+	HR {
+		Margin-Block-Start: 5CH;
+		Margin-Block-End: 5CH;
+		Border-Style: None;
+		Color: #776335;
+		Text-Align: Center;
+		Overflow: Hidden;
+	}
+	HR::AFTER { Content: "☙ ⁂ ❧" }
+	I { Font-Style: Italic }
+	ASIDE I,
+	BLOCKQUOTE I { Font-Style: Normal }
+	IFRAME {
+		Margin-Block-Start: 1.25CH;
+		Margin-Block-End: 1.25CH;
+		Margin-Inline-Start: Auto;
+		Margin-Inline-End: Auto;
+		Border-Style: Solid;
+		Border-Color: #887256;
+		Border-Width: Thin;
+		Padding-Block-Start: 2.5CH;
+		Padding-Block-End: 2.5CH;
+		Padding-Inline-Start: 2EM;
+		Padding-Inline-End: 2EM;
+		Color: #332714;
+		Background-Color: #FFF8E3;
+	}
+	P IMG { Vertical-Align: Middle }
+	FIGURE > IMG,
+	TD > IMG,
+	TH > IMG {
+		Display: Block;
+		Margin-Inline-Start: 0;
+		Margin-Inline-End: 0;
+		Border-Inline-Start: None;
+		Border-Inline-End: None;
+		Padding-Inline-Start: 0;
+		Padding-Inline-End: 0;
+		Inline-Size: 100%;
+	}
+	FIGURE > IMG,
+	TD > IMG[Hidden],
+	TH > IMG[Hidden] { Display: None }
+	INPUT:Not([Type="button"i]):Not([Type="checkbox"i]):Not([Type="color"i]):Not([Type="file"i]):Not([Type="image"i]):Not([Type="radio"i]) {
+		Margin-Inline-Start: Auto;
+		Margin-Inline-End: Auto;
+		Border-Style: Solid;
+		Border-Color: #887256;
+		Border-Width: Thin;
+		Inline-Size: 100%;
+		Max-Inline-Size: 28EM;
+		Color: #332714;
+		Background-Color: #FFF8E3;
+		Font-Family: Inherit;
+	}
+	INS,
+	INS[Title] {
+		Text-Decoration-Line: Underline;
+		Text-Decoration-Style: Double;
+	}
+	KBD {
+		Display: Inline-Block;
+		Margin: -1PX;
+		Border-Style: Solid;
+		Border-Color: #AA9F7F;
+		Border-Width: 1PX;
+		Color: #332714;
+		Background-Color: #EEDDBF;
+		Font-Variant-Numeric: Lining-Nums Tabular-Nums Diagonal-Fractions Slashed-Zero;
+	}
+	KBD[Hidden] { Display: None }
+	MAIN { Counter-Reset: UserContentParagraph }
+	MARK {
+		Margin: -1PX;
+		Border-Style: Solid;
+		Border-Color: #AA9F7F;
+		Border-Width: 1PX;
+		Color: #332714;
+		Background: #FFF8E3;
+	}
+	NAV {
+		Padding-Inline-Start: 2EM;
+		Padding-Inline-End: 2EM;
+	}
+	OL {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Margin-Inline-Start: Auto;
+		Margin-Inline-End: Auto;
+		Padding-Inline-Start: 2EM;
+		Inline-Size: -moz-Fit-Content;
+		List-Style-Type: Upper-Latin;
+		Text-Align: Left;
+	}
+	OL OL { List-Style-Type: Upper-Roman }
+	OL OL OL { List-Style-Type: Decimal }
+	OL OL OL OL { List-Style-Type: Decimal-Leading-Zero }
+	OL OL OL OL OL { List-Style-Type: Lower-Greek }
+	P {
+		Position: Relative;
+		Min-Block-Size: 2.5CH;
+		Font-Variant-Numeric: Oldstyle-Nums Proportional-Nums Diagonal-Fractions;
+		Font-Variant-Alternates: Styleset(Oldstyle-Punctuation);
+		Text-Indent: 2EM!IMPORTANT;
+	}
+	P::BEFORE {
+		Display: Block;
+		Position: Absolute;
+		Offset-Block-Start: 0;
+		Offset-Inline-End: Calc(100% - 1.5EM);
+		Min-Inline-Size: 1.5EM;
+		Font-Style: Italic;
+		White-Space: NoWrap;
+		Text-Indent: 0;
+		Opacity: .6;
+		Counter-Increment: UserContentParagraph;
+		Content: "¶" Counter(UserContentParagraph);
+	}
+	P > *|* { Text-Indent: 0 }
+	FOOTER P,
+	HEADER P {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Text-Indent: 0!IMPORTANT;
+	}
+	TABLE P { Text-Align: Justify }
+	FOOTER P::BEFORE,
+	HEADER P::BEFORE {
+		Counter-Increment: None;
+		Content: None;
+	}
+	ASIDE P::BEFORE,
+	DL P::BEFORE,
+	FIGURE P::BEFORE,  /*  Includes FIGCAPTION  */
+	LI P::BEFORE,
+	NAV P::BEFORE,
+	TABLE P::BEFORE {
+		Counter-Increment: None;
+		Content: "¶";
+	}
+	LISTING,  /*  Compatibility  */
+	PLAINTEXT,  /*  Compatibility  */
+	XMP,  /*  Compatibility  */
+	PRE {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Margin-Inline-Start: Auto;
+		Margin-Inline-End: Auto;
+		Inline-Size: -moz-Fit-Content;
+	}
+	STRIKE,  /*  Compatibility  */
+	S {
+		Text-Decoration-Line: Line-Through;
+		Text-Decoration-Style: Wavy;
+	}
+	TT,  /*  Compatibility  */
+	SAMP { Font-Variant-Numeric: Lining-Nums Tabular-Nums Diagonal-Fractions Slashed-Zero }
+	SECTION {
+		Margin-Block-Start: 5CH;
+		Margin-Block-End: 5CH;
+		Counter-Reset: UserContentParagraph;
+	}
+	STRONG {
+		Color: #FFF8E3;
+		Background-Color: #993232;
+		Font-Weight: Bold;
+	}
+	SUB {
+		Vertical-Align: Baseline;
+		Font-Variant-Position: Sub;
+	}
+	SUP {
+		Vertical-Align: Baseline;
+		Font-Variant-Position: Super;
+	}
+	TABLE {
+		Caption-Side: Bottom;
+		Margin-Block-Start: 1.25CH;
+		Margin-Block-End: 1.25CH;
+		Margin-Inline-Start: Auto;
+		Margin-Inline-End: Auto;
+		Border-Color: #443628;
+		Border-Width: Thin;
+		Border-Collapse: Collapse;
+		Max-Inline-Size: 100%;
+		Font-Size: Smaller;
+		Font-Variant-Numeric: Lining-Nums Tabular-Nums Diagonal-Fractions;
+	}
+	TBODY {
+		Border-Color: Inherit;
+		Border-Width: Inherit;
+	}
+	TD {
+		Padding-Block-Start: .625CH;
+		Padding-Block-End: .625CH;
+		Padding-Inline-Start: .5EM;
+		Padding-Inline-End: .5EM;
+		Border-Inline-Start-Style: Solid;
+		Border-Color: Inherit;
+		Border-Width: Inherit;
+	}
+	TBODY TD:First-Child { Border-Inline-Start-Style: Hidden }
+	TBODY TD:Last-Child { Border-Inline-End-Style: Hidden }
+	TEXTAREA {
+		Margin-Inline-Start: Auto;
+		Margin-Inline-End: Auto;
+		Border-Style: Solid;
+		Border-Color: #887256;
+		Border-Width: Thin;
+		Inline-Size: 100%;
+		Max-Inline-Size: 28EM;
+		Color: #332714;
+		Background-Color: #FFF8E3;
+		Font-Family: Inherit;
+	}
+	TFOOT {
+		Border-Color: #776335;
+		Border-Width: Inherit;
+		Background-Color: #EEDDBF;
+		Font-Size: Smaller;
+	}
+	TH {
+		Padding-Block-Start: .625CH;
+		Padding-Block-End: .625CH;
+		Padding-Inline-Start: .5EM;
+		Padding-Inline-End: .5EM;
+		Border-Inline-Start-Style: Solid;
+		Border-Color: #FFF8E3;
+		Border-Width: Inherit;
+		Color: #FFF8E3;
+		Background-Color: #336633;
+		Font-Weight: Bolder;
+		Text-Align: Center;
+	}
+	TBODY TH:First-Child { Border-Inline-Start-Style: Hidden }
+	TBODY TH:Last-Child { Border-Inline-End-Style: Hidden }
+	THEAD {
+		Border-Color: #FFF8E3;
+		Border-Width: Inherit;
+		Color: #FFF8E3;
+		Background-Color: #336633;
+		Font-Weight: Bolder;
+	}
+	TR {
+		Border-Block-Start-Style: Solid;
+		Border-Block-End-Style: Solid;
+		Border-Color: Inherit;
+		Border-Width: Inherit;
+	}
+	TBODY > TR:First-Child {
+		Border-Block-Start-Style: Solid;
+		Border-Block-Start-Color: Transparent;
+		Border-Block-Start-Width: 2.5CH;
+	}
+	TBODY:First-Child > TR:First-Child { Border-Block-Start-Style: Hidden }
+	TBODY > TR:Last-Child {
+		Border-Block-End-Style: Solid;
+		Border-Block-End-Color: Transparent;
+		Border-Block-End-Width: 2.5CH;
+	}
+	TBODY:Last-Child > TR:Last-Child { Border-Block-End-Style: Hidden }
+	U {
+		Text-Decoration-Line: Underline;
+		Text-Decoration-Style: Wavy;
+	}
+	DIR,  /*  Compatibility  */
+	UL {
+		Margin-Block-Start: 2.5CH;
+		Margin-Block-End: 2.5CH;
+		Margin-Inline-Start: Auto;
+		Margin-Inline-End: Auto;
+		Padding-Inline-Start: 2EM;
+		Inline-Size: -moz-Fit-Content;
+		Text-Align: Left;
+	}
+	UL { List-Style-Type: "⁃ " }
+	UL UL { List-Style-Type: "† " }
+	UL UL UL { List-Style-Type: "÷ " }
+	UL UL UL UL { List-Style-Type: "‡ " }
+	UL UL UL UL UL { List-Style-Type: "※ " }
+	VAR { Font-Family: Monospace }
+	math|MATH { Font-Variant-Numeric: Lining-Nums Tabular-Nums Stacked-Fractions Slashed-Zero }
+	math|MATH[Display="block"] {
+		Margin-Block-Start: 1EM;
+		Margin-Block-End: 1EM;
+		Font-Size: Larger;
+		Line-Height: 2;
+	}
+	svg|SVG { Fill: CurrentColor }
+}
+@-moz-document Domain(8tracks.com) {
+	*.dropdown { Margin: 0 }
+	*.container,
+	*.mix_set { Inline-Size: -moz-Fit-Content!IMPORTANT }
+	*.mixes {
+		Display: Flex!IMPORTANT;
+		Flex-Direction: Row;
+		Flex-Wrap: Wrap;
+		Justify-Content: Center;
+	}
+	#collection_title { Text-Align: Left }
+	#collection_wrapper {
+		Margin: 0;
+		Padding: 0;
+		Width: Auto;
+		Max-Width: None;
+		Overflow: Hidden;
+	}
+	#mix_name { Text-Align: Left }
+	#mix_wrapper {
+		Padding-Block-Start: 5CH;
+		Padding-Block-End: 5CH;
+		Padding-Inline-Start: 2EM;
+		Padding-Inline-End: 2EM;
+		Width: Auto;
+		Max-Width: None;
+	}
+	STRONG { Color: Inherit }
+}
+@-moz-document Domain(pinafore.social) {
+	BODY:Not(.offline) {
+		--button-primary-bg: #336633!IMPORTANT;
+		--button-primary-text: #FFF8E3!IMPORTANT;
+		--button-primary-border: #224422!IMPORTANT;
+		--button-primary-bg-active: #227002!IMPORTANT;
+		--button-primary-bg-hover: #336633!IMPORTANT;
+		--button-bg: #EEDDBF!IMPORTANT;
+		--button-text: #332714!IMPORTANT;
+		--button-border: #AA9F7F!IMPORTANT;
+		--button-bg-active: #AA9F7F!IMPORTANT;
+		--button-bg-hover: #FFF8E3!IMPORTANT;
+		--input-border: #EEDDBF!IMPORTANT;
+		--anchor-text: #227002!IMPORTANT;
+		--main-bg: #EEDDBF!IMPORTANT;
+		--body-bg: #FFF8E3!IMPORTANT;
+		--body-text-color: #332714!IMPORTANT;
+		--main-border: #AA9F7F!IMPORTANT;
+		--svg-fill: #887256!IMPORTANT;
+		--form-bg: #FFF8E3!IMPORTANT;
+		--form-border: #EEDDBF!IMPORTANT;
+		--nav-bg: #EEDDBF!IMPORTANT;
+		--nav-border: #AA9F7F!IMPORTANT;
+		--nav-a-border: #EEDDBF!IMPORTANT;
+		--nav-a-selected-border: #AA9F7F!IMPORTANT;
+		--nav-a-selected-bg: #FFF8E3!IMPORTANT;
+		--nav-svg-fill: #776335!IMPORTANT;
+		--nav-text-color: #443628!IMPORTANT;
+		--nav-a-selected-border-hover: #887256!IMPORTANT;
+		--nav-a-selected-bg-hover: #FFF8E3!IMPORTANT;
+		--nav-a-bg-hover: #EEDDBF!IMPORTANT;
+		--nav-a-border-hover: #AA9F7F!IMPORTANT;
+		--nav-svg-fill-hover: #776335!IMPORTANT;
+		--nav-text-color-hover: #776335!IMPORTANT;
+		--action-button-fill-color: #887256!IMPORTANT;
+		--action-button-fill-color-hover: #AA9F7F!IMPORTANT;
+		--action-button-fill-color-active: #776335!IMPORTANT;
+		--action-button-fill-color-pressed: #993232!IMPORTANT;
+		--action-button-fill-color-pressed-hover: #BB5252!IMPORTANT;
+		--action-button-fill-color-pressed-active: #993232!IMPORTANT;
+		--action-button-deemphasized-fill-color: #443628!IMPORTANT;
+		--action-button-deemphasized-fill-color-hover: #887256!IMPORTANT;
+		--action-button-deemphasized-fill-color-active: #776335!IMPORTANT;
+		--action-button-deemphasized-fill-color-pressed: #224422!IMPORTANT;
+		--action-button-deemphasized-fill-color-pressed-hover: #336633!IMPORTANT;
+		--action-button-deemphasized-fill-color-pressed-active: #227002!IMPORTANT;
+		--settings-list-item-bg: #EEDDBF!IMPORTANT;
+		--settings-list-item-text: #443628!IMPORTANT;
+		--settings-list-item-text-hover: #776335!IMPORTANT;
+		--settings-list-item-border: #887256!IMPORTANT;
+		--settings-list-item-bg-active: #FFF8E3!IMPORTANT;
+		--settings-list-item-bg-hover: #AA9F7F!IMPORTANT;
+		--toast-bg: #333!IMPORTANT;
+		--toast-border: #fafafa!IMPORTANT;
+		--toast-text: #fff!IMPORTANT;
+		--mask-bg: #AA9F7F!IMPORTANT;
+		--mask-svg-fill: #FFF8E3!IMPORTANT;
+		--mask-opaque-bg: #332714CC!IMPORTANT;
+		--loading-bg: #EEDDBF!IMPORTANT;
+		--account-profile-bg-backdrop-filter: #FFF8E3BB!IMPORTANT;
+		--account-profile-bg: #FFF8E3EE!IMPORTANT;
+		--deemphasized-text-color: #887256!IMPORTANT;
+		--focus-outline: #887256!IMPORTANT;
+		--very-deemphasized-link-color: #22700299!IMPORTANT;
+		--very-deemphasized-text-color: #44362899!IMPORTANT;
+		--status-direct-background: #FFF8EE!IMPORTANT;
+		--main-theme-color: #227002!IMPORTANT;
+		--warning-color: #993232!IMPORTANT;
+		--alt-input-bg: #FFF8E3BB!IMPORTANT;
+		--muted-modal-bg: Transparent!IMPORTANT;
+		--muted-modal-focus: #AA9F7F!IMPORTANT;
+		--muted-modal-hover: #FFF8E333!IMPORTANT;
+		--compose-autosuggest-item-hover: #FFF8E3!IMPORTANT;
+		--compose-autosuggest-item-active: #AA9F7F!IMPORTANT;
+		--compose-autosuggest-outline: #AA9F7F!IMPORTANT;
+		--compose-button-halo: #FFF8E311!IMPORTANT;
+	}
+}
