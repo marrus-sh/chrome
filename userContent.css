@@ -10,7 +10,7 @@
 	}
 }
 
-@keyframes Blink {
+@keyframes UserContent-Blink {
 	FROM { Color: Inherit }
 	60% { Color: Transparent }
 	TO { Color: Inherit }
@@ -27,22 +27,14 @@
 	Font-Style: Normal;
 	Font-Variant-Alternates: Styleset(Nordic-Alternates);
 }
+*|*:Any-Link:Hover { Text-Decoration-Style: Wavy }
+*|*:Any-Link:Active { Text-Decoration-Style: Solid }
+*|*:Link { Color: #004599 }
+*|*:Link:Hover { Color: #05285C }
 *|*:Link,
-*|*:Visited {
-	Color: #443628;
-	Text-Decoration-Line: Underline;
-	Text-Decoration-Style: Dashed;
-}
-*|*:Link:Hover,
-*|*:Visited:Hover {
-	Color: #776335;
-	Text-Decoration-Style: Wavy;
-}
-*|*:Link:Active,
-*|*:Visited:Active {
-	Color: #993232;
-	Text-Decoration-Style: Solid;
-}
+*|*:Visited { Text-Decoration: Dashed Underline }
+*|*:Visited { Color: #CD2C00 }
+*|*:Visited:Hover { Color: #8A1C00 }
 address {
 	Margin: Auto;
 	Inline-Size: -moz-Fit-Content;
@@ -54,75 +46,44 @@ article {
 	Text-Align: Justify;
 	Hyphens: Auto;
 }
-aside {
-	Font-Size: Smaller;
-	Font-Family: Sans-Serif;
-	Font-Style: Italic;
-	Font-Weight: Lighter;
-	Text-Align: Left;
-}
 b { Font-Weight: Bold }
 blink {  /*  "Compatibility"  */
-	Text-Decoration-Line: None;
-	Animation: 1.5S Infinite Step-End Blink;
+	Text-Decoration: None;
+	Animation: 1.5S Infinite Step-End UserContent-Blink;
 }
 blockquote {
 	Margin-Block-Start: 1.25CH;
 	Margin-Block-End: 1.25CH;
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
-	Border: Thin Solid;
-	Padding-Block-Start: 2.5CH;
-	Padding-Block-End: 2.5CH;
-	Padding-Inline-Start: 2EM;
-	Padding-Inline-End: 2EM;
-	Max-Inline-Size: 27EM;
+	Inline-Size: -moz-Fit-Content;
+	Font-Size: Larger;
 	Font-Style: Italic;
 }
 blockquote::AFTER { Content: No-Close-Quote }
 blockquote::BEFORE { Content: No-Open-Quote }
 blockquote blockquote {
 	Margin-Inline-Start: 0;
-	Border-Block-Start-Style: None;
-	Border-Block-End-Style: None;
-	Border-Inline-Start-Width: Medium;
-	Border-Inline-End-Style: None;
+	Border-Block-Start: None;
+	Border-Block-End: None;
+	Border-Inline-Start: Solid;
+	Border-Inline-End: None;
 	Padding-Inline-End: 0;
 }
 blockquote blockquote blockquote { Border-Inline-Start-Width: Thin }
-figure > blockquote { Font-Size: Larger }
 body {
 	Margin-Block-Start: 2.5CH;
 	Margin-Block-End: 2.5CH;
 	Margin-Inline-Start: 2EM;
 	Margin-Inline-End: 2EM;
-	Color: #332714;
-	Background-Color: #FFF8E3;
-	Font-Size: Medium!IMPORTANT;
-	Line-Height: 1.35!IMPORTANT;
 }
 caption {
 	Margin-Block-Start: 1.25CH;
 	Margin-Block-End: 1.25CH;
 }
 code {
-	Color: Black;
+	Font-Family: Monospace;
 	Font-Variant-Numeric: Lining-Nums Tabular-Nums Slashed-Zero;
-}
-col {
-	Border-Color: Inherit;
-	Border-Width: Inherit;
-}
-col:First-Child { Border-Inline-Start: 2EM Transparent Solid }
-colgroup {
-	Border-Color: Inherit;
-	Border-Width: Inherit;
-}
-dd {
-	Grid-Column-Start: 2;
-	Grid-Column-End: 3;
-	Box-Sizing: Border-Box;
-	Margin: 0;
 }
 del,
 del[Title] {
@@ -135,53 +96,26 @@ dfn {
 }
 dfn:Target {
 	Margin: 0 -.25EM;
-	Outline-Width: Thin;
-	Outline-Style: Solid;
+	Outline: Thin Solid;
 	Padding: 0 .25EM;
-	Color: #227002;
-	Background: #FFF8E3;
+	Color: #000000;
+	Background: #EEAE00;
 }
 dialog {
 	Padding-Block-Start: 2.5CH;
 	Padding-Block-End: 2.5CH;
 	Padding-Inline-Start: 1EM;
 	Padding-Inline-End: 1EM;
-	Color: #332714;
-	Background-Color: #FFF8E3;
+	Color: #000000;
+	Background-Color: #F0F0F0;
 }
 dl {
-	Display: Grid;
-	Grid-Row-Gap: .625CH;
-	Grid-Column-Gap: .5EM;
-	Grid-Template-Columns: MinMax(3.5EM, 7EM) MinMax(60%, 1fr);
-	Box-Sizing: Border-Box;
-	Clear: Both;
 	Margin-Block-Start: 2.5CH;
 	Margin-Block-End: 2.5CH;
-	Margin-Inline-Start: Auto;
-	Margin-Inline-End: Auto;
-	Inline-Size: 100%;
-	Max-Inline-Size: 31EM;
 	Text-Align: Left;
 }
-dl[Hidden] { Display: None }
-dt {
-	Grid-Column-Start: 1;
-	Grid-Column-End: 2;
-	Box-Sizing: Border-Box;
-	Color: #227002;
-	Hyphens: Auto;
-}
-em,
-em[Title] {
-	Font-Style: Inherit;
-	Text-Decoration-Line: Underline;
-}
-em em,
-em em[Title] {
-	Text-Decoration-Line: Underline;
-	Text-Decoration-Style: Double;
-}
+dt { Text-Decoration: Underline }
+em { Font-Style: Italic }
 figcaption {
 	Margin-Block-Start: 2.5CH;
 	Font-Size: X-Small;
@@ -199,22 +133,14 @@ figure {
 }
 footer {
 	Font-Size: Smaller;
-	Font-Style: Italic;
 	Text-Align: Right;
 }
-blockquote > footer:Last-Child {
-	Margin-Block-Start: 2.5CH;
-	Font-Style: Normal;
-}
+blockquote > footer:Last-Child { Margin-Block-Start: 2.5CH }
 h1 {
 	Margin-Block-Start: 2.5CH;
 	Margin-Block-End: 0;
-	Margin-Inline-Start: Auto;
-	Margin-Inline-End: Auto;
-	Inline-Size: -moz-Fit-Content;
 	Font-Size: XX-Large;
 	Font-Weight: Bolder;
-	Text-Align: Left;
 	Hyphens: None;
 }
 header h1 { Margin-Block-Start: 0 }
@@ -223,13 +149,8 @@ section h1,
 h2 {
 	Margin-Block-Start: 5CH;
 	Margin-Block-End: 2.5CH;
-	Margin-Inline-Start: Auto;
-	Margin-Inline-End: Auto;
-	Inline-Size: -moz-Fit-Content;
 	Font-Size: X-Large;
-	Font-Family: Sans-Serif;
 	Font-Weight: Bolder;
-	Text-Align: Left;
 	Hyphens: None;
 }
 header nav h1,
@@ -245,11 +166,8 @@ h3 {
 	Margin-Block-Start: 2.5CH;
 	Margin-Block-End: 2.5CH;
 	Border-Block-End: Thin CurrentColor Solid;
-	Margin-Inline-Start: 0;
-	Margin-Inline-End: 0;
 	Font-Size: Large;
 	Font-Weight: Bolder;
-	Text-Align: Left;
 }
 header nav section h1,
 header section nav h1,
@@ -262,11 +180,8 @@ section section section h1,
 h4 {
 	Margin-Block-Start: 2.5CH;
 	Margin-Block-End: 2.5CH;
-	Margin-Inline-Start: 0;
-	Margin-Inline-End: 0;
 	Font-Size: Medium;
 	Font-Variant-Caps: Petite-Caps;
-	Text-Align: Left;
 }
 nav section section section h1,
 section nav section section h1,
@@ -276,12 +191,9 @@ section section section section h1,
 h5 {
 	Margin-Block-Start: 2.5CH;
 	Margin-Block-End: 2.5CH;
-	Margin-Inline-Start: 0;
-	Margin-Inline-End: 0;
 	Font-Size: Small;
 	Font-Weight: Bolder;
 	Font-Variant-Caps: Titling-Caps;
-	Text-Align: Left;
 	Text-Transform: Uppercase;
 }
 nav section section section section h1,
@@ -293,19 +205,14 @@ section section section section section h1,
 h6 {
 	Margin-Block-Start: 2.5CH;
 	Margin-Block-End: 2.5CH;
-	Margin-Inline-Start: 0;
-	Margin-Inline-End: 0;
 	Font-Size: Medium;
 	Font-Style: Italic;
 	Text-Align: Right;
 }
-header {
-	Font-Family: Sans-Serif;
-	Text-Align: Center;
-}
+header { Text-Align: Center }
 html {
-	Color: #332714;
-	Background-Color: #FFF8E3;
+	Color: #000000;
+	Background-Color: #FFFFFF;
 	Font-Size: Medium!IMPORTANT;
 	Font-Family: Junicode, Serif;
 	Font-Synthesis: None;
@@ -317,64 +224,58 @@ hr {
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
 	Border-Style: None;
-	Color: #776335;
 	Text-Align: Center;
 	Overflow: Hidden;
+	Opacity: .65;
 }
 hr::AFTER { Content: "☙ ⁂ ❧" }
 i { Font-Style: Italic }
-aside i,
 blockquote i { Font-Style: Normal }
 iframe {
 	Margin-Block-Start: 1.25CH;
 	Margin-Block-End: 1.25CH;
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
-	Border-Style: Thin #887256 Solid;
-	Color: #332714;
-	Background-Color: #FFF8E3;
+	Border-Style: Medium #05285c Outset;
+	Color: #000000;
+	Background-Color: #F0F0F0;
 }
 p img { Vertical-Align: Middle }
 figure > img,
 td > img,
 th > img {
 	Display: Block;
-	Margin-Inline-Start: 0;
-	Margin-Inline-End: 0;
+	Margin-Inline-Start: Auto;
+	Margin-Inline-End: Auto;
 	Border-Inline-Start: None;
 	Border-Inline-End: None;
-	Padding-Inline-Start: 0;
-	Padding-Inline-End: 0;
-	Inline-Size: 100%;
+	Max-Inline-Size: 100%;
 }
-figure > img[Hidden],
-td > img[Hidden],
-th > img[Hidden] { Display: None }
-INPUT:Not([Type="button"i]):Not([Type="checkbox"i]):Not([Type="color"i]):Not([Type="file"i]):Not([Type="image"i]):Not([Type="radio"i]) {
-	Border-Style: Thin #887256 Solid;
-	Color: #332714;
-	Background-Color: #FFF8E3;
+figure > img[hidden],
+td > img[hidden],
+th > img[hidden] { Display: None }
+input:Not([type="button"i]):Not([type="checkbox"i]):Not([type="color"i]):Not([type="file"i]):Not([type="image"i]):Not([type="radio"i]) {
+	Border: Thin #05285C Solid;
+	Color: #000000;
+	Background-Color: #FFFFFF;
 	Font-Family: Inherit;
 }
+input:Not([type="button"i]):Not([type="checkbox"i]):Not([type="color"i]):Not([type="file"i]):Not([type="image"i]):Not([type="radio"i]):Active { Border-Color: #CD2C00 }
 ins,
-ins[Title] {
-	Text-Decoration-Line: Underline;
-	Text-Decoration-Style: Double;
-}
+ins[title] { Text-Decoration: Double Underline }
 kbd {
 	Display: Inline-Block;
 	Margin: -1PX;
-	Border-Style: 1PX #AA9F7F Solid;
-	Color: #332714;
-	Background-Color: #EEDDBF;
+	Border-Style: 1PX #000000 Solid;
+	Color: #000000;
+	Background-Color: #FFFFFF;
+	Font-Family: Monospace;
 	Font-Variant-Numeric: Lining-Nums Tabular-Nums Slashed-Zero;
 }
-kbd[Hidden] { Display: None }
+kbd[hidden] { Display: None }
 mark {
-	Margin: -1PX;
-	Border-Style: 1PX #AA9F7F Solid;
-	Color: #332714;
-	Background: #FFF8E3;
+	Color: #000000;
+	Background: #EEAE00;
 }
 ol {
 	Margin-Block-Start: 2.5CH;
@@ -382,11 +283,11 @@ ol {
 	Margin-Inline-Start: 0;
 	Margin-Inline-End: 0;
 	Padding-Inline-Start: 2EM;
-	List-Style-Type: Upper-Latin;
+	List-Style-Type: Decimal;
 	Text-Align: Left;
 }
-ol ol { List-Style-Type: Upper-Roman }
-ol ol ol { List-Style-Type: Decimal }
+ol ol { List-Style-Type: Upper-Latin }
+ol ol ol { List-Style-Type: Upper-Roman }
 ol ol ol ol { List-Style-Type: Decimal-Leading-Zero }
 ol ol ol ol ol { List-Style-Type: Lower-Greek }
 p {
@@ -414,16 +315,10 @@ pre {
 	Inline-Size: -moz-Fit-Content;
 }
 strike,  /*  Compatibility  */
-s {
-	Text-Decoration-Line: Line-Through;
-	Text-Decoration-Style: Wavy;
-}
+s { Text-Decoration: Wavy Line-Through }
 tt,  /*  Compatibility  */
 samp { Font-Variant-Numeric: Lining-Nums Tabular-Nums Slashed-Zero }
-strong {
-	Color: #993232;
-	Font-Weight: Bold;
-}
+strong { Font-Weight: Bold }
 sub {
 	Vertical-Align: Baseline;
 	Font-Variant-Position: Sub;
@@ -438,88 +333,38 @@ table {
 	Margin-Block-End: 1.25CH;
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
-	Border-Color: #443628;
-	Border-Width: Thin;
-	Border-Collapse: Collapse;
 	Max-Inline-Size: 100%;
 	Font-Size: Smaller;
 	Font-Variant-Numeric: Lining-Nums Tabular-Nums;
-}
-tbody {
-	Border-Color: Inherit;
-	Border-Width: Inherit;
 }
 td {
 	Padding-Block-Start: .625CH;
 	Padding-Block-End: .625CH;
 	Padding-Inline-Start: .5EM;
 	Padding-Inline-End: .5EM;
-	Border-Inline-Start-Style: Solid;
-	Border-Color: Inherit;
-	Border-Width: Inherit;
 }
-tbody td:First-Child { Border-Inline-Start-Style: Hidden }
-tbody td:Last-Child { Border-Inline-End-Style: Hidden }
 textarea {
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
-	Border: Thin #887256 Solid;
+	Border: Thin #05285C Solid;
 	Inline-Size: 100%;
 	Max-Inline-Size: 27EM;
-	Color: #332714;
-	Background-Color: #FFF8E3;
+	Color: #000000;
+	Background-Color: #FFFFFF;
 	Font-Family: Inherit;
 }
-tfoot {
-	Border-Color: #776335;
-	Border-Width: Inherit;
-	Background-Color: #EEDDBF;
-	Font-Size: Smaller;
-}
+textarea:Active { Border-Color: #CD2C00 }
+tfoot { Color: #05285C }
 th {
 	Padding-Block-Start: .625CH;
 	Padding-Block-End: .625CH;
 	Padding-Inline-Start: .5EM;
 	Padding-Inline-End: .5EM;
-	Border-Inline-Start-Style: Solid;
-	Border-Color: #FFF8E3;
-	Border-Width: Inherit;
-	Color: #FFF8E3;
-	Background-Color: #336633;
 	Font-Weight: Bolder;
 	Text-Align: Center;
 }
-tbody th:First-Child { Border-Inline-Start-Style: Hidden }
-tbody th:Last-Child { Border-Inline-End-Style: Hidden }
-thead {
-	Border-Color: #FFF8E3;
-	Border-Width: Inherit;
-	Color: #FFF8E3;
-	Background-Color: #336633;
-	Font-Weight: Bolder;
-}
-tr {
-	Border-Block-Start-Style: Solid;
-	Border-Block-End-Style: Solid;
-	Border-Color: Inherit;
-	Border-Width: Inherit;
-}
-tbody > tr:First-Child {
-	Border-Block-Start-Style: Solid;
-	Border-Block-Start-Color: Transparent;
-	Border-Block-Start-Width: 2.5CH;
-}
-tbody:First-Child > tr:First-Child { Border-Block-Start-Style: Hidden }
-tbody > tr:Last-Child {
-	Border-Block-End-Style: Solid;
-	Border-Block-End-Color: Transparent;
-	Border-Block-End-Width: 2.5CH;
-}
-tbody:Last-Child > tr:Last-Child { Border-Block-End-Style: Hidden }
-u {
-	Text-Decoration-Line: Underline;
-	Text-Decoration-Style: Wavy;
-}
+thead { Color: #8A1C00 }
+u { Text-Decoration: Wavy Underline }
 dir,  /*  Compatibility  */
 ul {
 	Margin-Block-Start: 2.5CH;
