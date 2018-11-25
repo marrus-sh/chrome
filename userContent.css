@@ -36,7 +36,6 @@
 *|*:Visited { Color: #CD2C00 }
 *|*:Visited:Hover { Color: #8A1C00 }
 address {
-	Margin: Auto;
 	Inline-Size: -moz-Fit-Content;
 	Font-Family: Monospace;
 	Text-Align: Left;
@@ -52,10 +51,8 @@ blink {  /*  "Compatibility"  */
 	Animation: 1.5S Infinite Step-End UserContent-Blink;
 }
 blockquote {
-	Margin-Block-Start: 1.25CH;
-	Margin-Block-End: 1.25CH;
-	Margin-Inline-Start: Auto;
-	Margin-Inline-End: Auto;
+	Margin-Block-Start: 1.25EX;
+	Margin-Block-End: 1.25EX;
 	Inline-Size: -moz-Fit-Content;
 	Font-Size: Larger;
 	Font-Style: Italic;
@@ -63,23 +60,19 @@ blockquote {
 blockquote::AFTER { Content: No-Close-Quote }
 blockquote::BEFORE { Content: No-Open-Quote }
 blockquote blockquote {
-	Margin-Inline-Start: 0;
-	Border-Block-Start: None;
-	Border-Block-End: None;
 	Border-Inline-Start: Solid;
-	Border-Inline-End: None;
 	Padding-Inline-End: 0;
 }
 blockquote blockquote blockquote { Border-Inline-Start-Width: Thin }
 body {
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
-	Margin-Inline-Start: 2EM;
-	Margin-Inline-End: 2EM;
+	Margin-Block-Start: 2.5EX;
+	Margin-Block-End: 2.5EX;
+	Margin-Inline-Start: 4CH;
+	Margin-Inline-End: 4CH;
 }
 caption {
-	Margin-Block-Start: 1.25CH;
-	Margin-Block-End: 1.25CH;
+	Margin-Block-Start: 1.25EX;
+	Margin-Block-End: 1.25EX;
 }
 code {
 	Font-Family: Monospace;
@@ -102,22 +95,22 @@ dfn:Target {
 	Background: #EEAE00;
 }
 dialog {
-	Padding-Block-Start: 2.5CH;
-	Padding-Block-End: 2.5CH;
-	Padding-Inline-Start: 1EM;
-	Padding-Inline-End: 1EM;
+	Padding-Block-Start: 2.5EX;
+	Padding-Block-End: 2.5EX;
+	Padding-Inline-Start: 2CH;
+	Padding-Inline-End: 2CH;
 	Color: #000000;
 	Background-Color: #F0F0F0;
 }
 dl {
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
+	Margin-Block-Start: 2.5EX;
+	Margin-Block-End: 2.5EX;
 	Text-Align: Left;
 }
 dt { Text-Decoration: Underline }
 em { Font-Style: Italic }
 figcaption {
-	Margin-Block-Start: 2.5CH;
+	Margin-Block-Start: 2.5EX;
 	Font-Size: X-Small;
 	Font-Variant-Alternates: Styleset(Enlarged-Minuscules);
 	Font-Variant-Numeric: Lining-Nums Proportional-Nums;
@@ -125,8 +118,8 @@ figcaption {
 MATH|math[Display="block"] + figcaption { Margin-Block-Start: 0 }
 figure {
 	Box-Sizing: Border-Box;
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
+	Margin-Block-Start: 2.5EX;
+	Margin-Block-End: 2.5EX;
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
 	Inline-Size: -moz-Fit-Content;
@@ -135,9 +128,9 @@ footer {
 	Font-Size: Smaller;
 	Text-Align: Right;
 }
-blockquote > footer:Last-Child { Margin-Block-Start: 2.5CH }
+blockquote > footer:Last-Child { Margin-Block-Start: 2.5EX }
 h1 {
-	Margin-Block-Start: 2.5CH;
+	Margin-Block-Start: 2.5EX;
 	Margin-Block-End: 0;
 	Font-Size: XX-Large;
 	Font-Weight: Bolder;
@@ -147,8 +140,8 @@ header h1 { Margin-Block-Start: 0 }
 nav h1,
 section h1,
 h2 {
-	Margin-Block-Start: 5CH;
-	Margin-Block-End: 2.5CH;
+	Margin-Block-Start: 5EX;
+	Margin-Block-End: 2.5EX;
 	Font-Size: X-Large;
 	Font-Weight: Bolder;
 	Hyphens: None;
@@ -163,8 +156,8 @@ nav section h1,
 section nav h1,
 section section h1,
 h3 {
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
+	Margin-Block-Start: 2.5EX;
+	Margin-Block-End: 2.5EX;
 	Border-Block-End: Thin CurrentColor Solid;
 	Font-Size: Large;
 	Font-Weight: Bolder;
@@ -178,8 +171,8 @@ section nav section h1,
 section section nav h1,
 section section section h1,
 h4 {
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
+	Margin-Block-Start: 2.5EX;
+	Margin-Block-End: 2.5EX;
 	Font-Size: Medium;
 	Font-Variant-Caps: Petite-Caps;
 }
@@ -189,8 +182,8 @@ section section nav section h1,
 section section section nav h1,
 section section section section h1,
 h5 {
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
+	Margin-Block-Start: 2.5EX;
+	Margin-Block-End: 2.5EX;
 	Font-Size: Small;
 	Font-Weight: Bolder;
 	Font-Variant-Caps: Titling-Caps;
@@ -203,8 +196,8 @@ section section section nav section h1,
 section section section section nav h1,
 section section section section section h1,
 h6 {
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
+	Margin-Block-Start: 2.5EX;
+	Margin-Block-End: 2.5EX;
 	Font-Size: Medium;
 	Font-Style: Italic;
 	Text-Align: Right;
@@ -215,12 +208,11 @@ html {
 	Background-Color: #FFFFFF;
 	Font-Size: Medium!IMPORTANT;
 	Font-Family: Junicode, Serif;
-	Font-Synthesis: None;
 	Line-Height: 1.35!IMPORTANT;
 }
 hr {
-	Margin-Block-Start: 5CH;
-	Margin-Block-End: 5CH;
+	Margin-Block-Start: 5EX;
+	Margin-Block-End: 5EX;
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
 	Border-Style: None;
@@ -232,8 +224,8 @@ hr::AFTER { Content: "☙ ⁂ ❧" }
 i { Font-Style: Italic }
 blockquote i { Font-Style: Normal }
 iframe {
-	Margin-Block-Start: 1.25CH;
-	Margin-Block-End: 1.25CH;
+	Margin-Block-Start: 1.25EX;
+	Margin-Block-End: 1.25EX;
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
 	Border-Style: Medium #05285c Outset;
@@ -278,11 +270,11 @@ mark {
 	Background: #EEAE00;
 }
 ol {
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
+	Margin-Block-Start: 2.5EX;
+	Margin-Block-End: 2.5EX;
 	Margin-Inline-Start: 0;
 	Margin-Inline-End: 0;
-	Padding-Inline-Start: 2EM;
+	Padding-Inline-Start: 4CH;
 	List-Style-Type: Decimal;
 	Text-Align: Left;
 }
@@ -291,25 +283,18 @@ ol ol ol { List-Style-Type: Upper-Roman }
 ol ol ol ol { List-Style-Type: Decimal-Leading-Zero }
 ol ol ol ol ol { List-Style-Type: Lower-Greek }
 p {
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
-	Margin-Inline-Start: 0;
-	Margin-Inline-End: 0;
+	Margin-Block-Start: 2.5EX;
+	Margin-Block-End: 2.5EX;
 	Font-Variant-Numeric: Oldstyle-Nums Proportional-Nums;
 	Font-Variant-Alternates: Styleset(Oldstyle-Punctuation);
 	Text-Align: Justify;
-}
-footer p,
-header p {
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
 }
 listing,  /*  Compatibility  */
 plaintext,  /*  Compatibility  */
 xmp,  /*  Compatibility  */
 pre {
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
+	Margin-Block-Start: 2.5EX;
+	Margin-Block-End: 2.5EX;
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
 	Inline-Size: -moz-Fit-Content;
@@ -329,26 +314,24 @@ sup {
 }
 table {
 	Caption-Side: Bottom;
-	Margin-Block-Start: 1.25CH;
-	Margin-Block-End: 1.25CH;
-	Margin-Inline-Start: Auto;
-	Margin-Inline-End: Auto;
+	Margin-Block-Start: 1.25EX;
+	Margin-Block-End: 1.25EX;
 	Max-Inline-Size: 100%;
 	Font-Size: Smaller;
 	Font-Variant-Numeric: Lining-Nums Tabular-Nums;
 }
 td {
-	Padding-Block-Start: .625CH;
-	Padding-Block-End: .625CH;
-	Padding-Inline-Start: .5EM;
-	Padding-Inline-End: .5EM;
+	Padding-Block-Start: .625EX;
+	Padding-Block-End: .625EX;
+	Padding-Inline-Start: 1CH;
+	Padding-Inline-End: 1CH;
 }
 textarea {
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
 	Border: Thin #05285C Solid;
 	Inline-Size: 100%;
-	Max-Inline-Size: 27EM;
+	Max-Inline-Size: 52CH;
 	Color: #000000;
 	Background-Color: #FFFFFF;
 	Font-Family: Inherit;
@@ -356,10 +339,10 @@ textarea {
 textarea:Active { Border-Color: #CD2C00 }
 tfoot { Color: #05285C }
 th {
-	Padding-Block-Start: .625CH;
-	Padding-Block-End: .625CH;
-	Padding-Inline-Start: .5EM;
-	Padding-Inline-End: .5EM;
+	Padding-Block-Start: .625EX;
+	Padding-Block-End: .625EX;
+	Padding-Inline-Start: 1CH;
+	Padding-Inline-End: 1CH;
 	Font-Weight: Bolder;
 	Text-Align: Center;
 }
@@ -367,11 +350,11 @@ thead { Color: #8A1C00 }
 u { Text-Decoration: Wavy Underline }
 dir,  /*  Compatibility  */
 ul {
-	Margin-Block-Start: 2.5CH;
-	Margin-Block-End: 2.5CH;
+	Margin-Block-Start: 2.5EX;
+	Margin-Block-End: 2.5EX;
 	Margin-Inline-Start: 0;
 	Margin-Inline-End: 0;
-	Padding-Inline-Start: 2EM;
+	Padding-Inline-Start: 4CH;
 	Text-Align: Left;
 }
 ul { List-Style-Type: "⁃ " }
@@ -382,12 +365,12 @@ ul ul ul ul ul { List-Style-Type: "※ " }
 var { Font-Family: Monospace }
 MATH|math { Font-Variant-Numeric: Lining-Nums Tabular-Nums Stacked-Fractions Slashed-Zero }
 MATH|math[Display="block"] {
-	Margin-Block-Start: 1EM;
-	Margin-Block-End: 1EM;
+	Margin-Block-Start: 2EX;
+	Margin-Block-End: 2EX;
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
 	Inline-Size: -moz-Fit-Content;
-	Max-Inline-Size: 31EM;
+	Max-Inline-Size: 64CH;
 	Font-Size: Larger;
 	Line-Height: 2;
 }
