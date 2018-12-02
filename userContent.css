@@ -62,6 +62,7 @@ blockquote::BEFORE { Content: No-Open-Quote }
 blockquote blockquote {
 	Border-Inline-Start: Solid;
 	Padding-Inline-End: 0;
+	Font-Size: Inherit;
 }
 blockquote blockquote blockquote { Border-Inline-Start-Width: Thin }
 body {
