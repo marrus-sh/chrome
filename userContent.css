@@ -27,54 +27,6 @@
 	Font-Style: Normal;
 	Font-Variant-Alternates: Styleset(Nordic-Alternates);
 }
-*|*:Any-Link:Hover { Text-Decoration-Style: Wavy }
-*|*:Any-Link:Active { Text-Decoration-Style: Solid }
-*|*:Link { Color: #004599 }
-*|*:Link:Hover { Color: #05285C }
-*|*:Link,
-*|*:Visited { Text-Decoration: Dashed Underline }
-*|*:Visited { Color: #CD2C00 }
-*|*:Visited:Hover { Color: #8A1C00 }
-address {
-	Inline-Size: -moz-Fit-Content;
-	Font-Family: Monospace;
-	Text-Align: Left;
-	Hyphens: None;
-}
-article {
-	Text-Align: Justify;
-	Hyphens: Auto;
-}
-b { Font-Weight: Bold }
-blink {  /*  "Compatibility"  */
-	Text-Decoration: None;
-	Animation: 1.5S Infinite Step-End UserContent-Blink;
-}
-blockquote {
-	Margin-Block-Start: 1.25EX;
-	Margin-Block-End: 1.25EX;
-	Inline-Size: -moz-Fit-Content;
-	Font-Size: Larger;
-	Font-Style: Italic;
-}
-blockquote::AFTER { Content: No-Close-Quote }
-blockquote::BEFORE { Content: No-Open-Quote }
-blockquote blockquote {
-	Border-Inline-Start: Solid;
-	Padding-Inline-End: 0;
-	Font-Size: Inherit;
-}
-blockquote blockquote blockquote { Border-Inline-Start-Width: Thin }
-body {
-	Margin-Block-Start: 2.5EX;
-	Margin-Block-End: 2.5EX;
-	Margin-Inline-Start: 4CH;
-	Margin-Inline-End: 4CH;
-}
-caption {
-	Margin-Block-Start: 1.25EX;
-	Margin-Block-End: 1.25EX;
-}
 code {
 	Font-Family: Monospace;
 	Font-Variant-Numeric: Lining-Nums Tabular-Nums Slashed-Zero;
@@ -95,41 +47,26 @@ dfn:Target {
 	Color: #000000;
 	Background: #EEAE00;
 }
-dialog {
-	Padding-Block-Start: 2.5EX;
-	Padding-Block-End: 2.5EX;
-	Padding-Inline-Start: 2CH;
-	Padding-Inline-End: 2CH;
-	Color: #000000;
-	Background-Color: #F0F0F0;
-}
-dl {
+dir,  /*  Compatibility  */
+ol,
+ul {
 	Margin-Block-Start: 2.5EX;
 	Margin-Block-End: 2.5EX;
-	Text-Align: Left;
+	Margin-Inline-Start: 0;
+	Margin-Inline-End: 0;
+	Padding-Inline-Start: 4CH;
 }
 dt { Text-Decoration: Underline }
-em { Font-Style: Italic }
 figcaption {
-	Margin-Block-Start: 2.5EX;
 	Font-Size: X-Small;
 	Font-Variant-Alternates: Styleset(Enlarged-Minuscules);
 	Font-Variant-Numeric: Lining-Nums Proportional-Nums;
 }
-MATH|math[Display="block"] + figcaption { Margin-Block-Start: 0 }
 figure {
-	Box-Sizing: Border-Box;
-	Margin-Block-Start: 2.5EX;
-	Margin-Block-End: 2.5EX;
 	Margin-Inline-Start: Auto;
 	Margin-Inline-End: Auto;
 	Inline-Size: -moz-Fit-Content;
 }
-footer {
-	Font-Size: Smaller;
-	Text-Align: Right;
-}
-blockquote > footer:Last-Child { Margin-Block-Start: 2.5EX }
 h1 {
 	Margin-Block-Start: 2.5EX;
 	Margin-Block-End: 0;
@@ -159,9 +96,9 @@ section section h1,
 h3 {
 	Margin-Block-Start: 2.5EX;
 	Margin-Block-End: 2.5EX;
-	Border-Block-End: Thin CurrentColor Solid;
 	Font-Size: Large;
 	Font-Weight: Bolder;
+	Text-Decoration: Underline;
 }
 header nav section h1,
 header section nav h1,
@@ -203,32 +140,11 @@ h6 {
 	Font-Style: Italic;
 	Text-Align: Right;
 }
-header { Text-Align: Center }
 html {
-	Color: #000000;
-	Background-Color: #FFFFFF;
-	Font-Size: Medium!IMPORTANT;
 	Font-Family: Junicode, Serif;
-	Line-Height: 1.35!IMPORTANT;
+	Line-Height: 1.35;
 }
-hr {
-	Margin-Block-Start: 5EX;
-	Margin-Block-End: 5EX;
-	Margin-Inline-Start: Auto;
-	Margin-Inline-End: Auto;
-	Border-Style: None;
-	Text-Align: Center;
-	Overflow: Hidden;
-	Opacity: .65;
-}
-hr::AFTER { Content: "☙ ⁂ ❧" }
-i { Font-Style: Italic }
-blockquote i { Font-Style: Normal }
 iframe {
-	Margin-Block-Start: 1.25EX;
-	Margin-Block-End: 1.25EX;
-	Margin-Inline-Start: Auto;
-	Margin-Inline-End: Auto;
 	Border-Style: Medium #05285c Outset;
 	Color: #000000;
 	Background-Color: #F0F0F0;
@@ -247,13 +163,6 @@ th > img {
 figure > img[hidden],
 td > img[hidden],
 th > img[hidden] { Display: None }
-input:Not([type="button"i]):Not([type="checkbox"i]):Not([type="color"i]):Not([type="file"i]):Not([type="image"i]):Not([type="radio"i]) {
-	Border: Thin #05285C Solid;
-	Color: #000000;
-	Background-Color: #FFFFFF;
-	Font-Family: Inherit;
-}
-input:Not([type="button"i]):Not([type="checkbox"i]):Not([type="color"i]):Not([type="file"i]):Not([type="image"i]):Not([type="radio"i]):Active { Border-Color: #CD2C00 }
 ins,
 ins[title] { Text-Decoration: Double Underline }
 kbd {
@@ -270,15 +179,7 @@ mark {
 	Color: #000000;
 	Background: #EEAE00;
 }
-ol {
-	Margin-Block-Start: 2.5EX;
-	Margin-Block-End: 2.5EX;
-	Margin-Inline-Start: 0;
-	Margin-Inline-End: 0;
-	Padding-Inline-Start: 4CH;
-	List-Style-Type: Decimal;
-	Text-Align: Left;
-}
+ol { List-Style-Type: Decimal }
 ol ol { List-Style-Type: Upper-Latin }
 ol ol ol { List-Style-Type: Upper-Roman }
 ol ol ol ol { List-Style-Type: Decimal-Leading-Zero }
@@ -288,7 +189,6 @@ p {
 	Margin-Block-End: 2.5EX;
 	Font-Variant-Numeric: Oldstyle-Nums Proportional-Nums;
 	Font-Variant-Alternates: Styleset(Oldstyle-Punctuation);
-	Text-Align: Justify;
 }
 listing,  /*  Compatibility  */
 plaintext,  /*  Compatibility  */
@@ -296,28 +196,21 @@ xmp,  /*  Compatibility  */
 pre {
 	Margin-Block-Start: 2.5EX;
 	Margin-Block-End: 2.5EX;
-	Margin-Inline-Start: Auto;
-	Margin-Inline-End: Auto;
 	Inline-Size: -moz-Fit-Content;
 }
 strike,  /*  Compatibility  */
 s { Text-Decoration: Wavy Line-Through }
 tt,  /*  Compatibility  */
-samp { Font-Variant-Numeric: Lining-Nums Tabular-Nums Slashed-Zero }
-strong { Font-Weight: Bold }
-sub {
-	Vertical-Align: Baseline;
-	Font-Variant-Position: Sub;
-}
-sup {
-	Vertical-Align: Baseline;
-	Font-Variant-Position: Super;
+samp {
+	Font-Family: Monospace;
+	Font-Variant-Numeric: Lining-Nums Tabular-Nums Slashed-Zero;
 }
 table {
 	Caption-Side: Bottom;
 	Margin-Block-Start: 1.25EX;
 	Margin-Block-End: 1.25EX;
 	Max-Inline-Size: 100%;
+	Overflow: Auto;
 	Font-Size: Smaller;
 	Font-Variant-Numeric: Lining-Nums Tabular-Nums;
 }
@@ -327,17 +220,6 @@ td {
 	Padding-Inline-Start: 1CH;
 	Padding-Inline-End: 1CH;
 }
-textarea {
-	Margin-Inline-Start: Auto;
-	Margin-Inline-End: Auto;
-	Border: Thin #05285C Solid;
-	Inline-Size: 100%;
-	Max-Inline-Size: 52CH;
-	Color: #000000;
-	Background-Color: #FFFFFF;
-	Font-Family: Inherit;
-}
-textarea:Active { Border-Color: #CD2C00 }
 tfoot { Color: #05285C }
 th {
 	Padding-Block-Start: .625EX;
@@ -349,15 +231,6 @@ th {
 }
 thead { Color: #8A1C00 }
 u { Text-Decoration: Wavy Underline }
-dir,  /*  Compatibility  */
-ul {
-	Margin-Block-Start: 2.5EX;
-	Margin-Block-End: 2.5EX;
-	Margin-Inline-Start: 0;
-	Margin-Inline-End: 0;
-	Padding-Inline-Start: 4CH;
-	Text-Align: Left;
-}
 ul { List-Style-Type: "⁃ " }
 ul ul { List-Style-Type: "† " }
 ul ul ul { List-Style-Type: "÷ " }
@@ -453,4 +326,40 @@ SVG|svg { Fill: CurrentColor }
 		--compose-autosuggest-outline: #AA9F7F!IMPORTANT;
 		--compose-button-halo: #FFF8E311!IMPORTANT;
 	}
+}
+@-moz-document Domain(weirder.earth), Domain(wandering.shop), Domain(fandom.ink), Domain(glitch.social), Domain(botsin.space) {
+	html::AFTER,
+	.scrollable>*::AFTER {
+		Position: Absolute;
+		Inset: 0;
+		Background: Grey;
+		Mix-Blend-Mode: Color;
+		Pointer-Events: None;
+		Z-Index: 102400;
+		Content: "";
+	}
+	.scrollable { Z-Index: 102401 }
+	.scrollable>* { Position: Relative }
+	*[style*="background-image"],
+	img { Z-Index: 102402; }
+}
+@-moz-document Domain(weirder.earth) {
+	html::AFTER,
+	.scrollable>*::AFTER { Background: #57534C }
+}
+@-moz-document Domain(wandering.shop) {
+	html::AFTER,
+	.scrollable>*::AFTER { Background: #1AACEB }
+}
+@-moz-document Domain(fandom.ink) {
+	html::AFTER,
+	.scrollable>*::AFTER { Background: #EB9100 }
+}
+@-moz-document Domain(glitch.social) {
+	html::AFTER,
+	.scrollable>*::AFTER { Background: #50D952 }
+}
+@-moz-document Domain(botsin.space) {
+	html::AFTER,
+	.scrollable>*::AFTER { Background: #FAE13E }
 }
