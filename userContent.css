@@ -328,38 +328,68 @@ SVG|svg { Fill: CurrentColor }
 	}
 }
 @-moz-document Domain(weirder.earth), Domain(wandering.shop), Domain(fandom.ink), Domain(glitch.social), Domain(botsin.space) {
-	html::AFTER,
-	.scrollable>*::AFTER {
+	*:-moz-Any(
+		html,
+		.scrollable,
+		.search-popout,
+		.drawer__inner,
+		.dropdown-menu,
+		.privacy-dropdown__dropdown,
+		.emoji-mart
+	)::AFTER,
+	body>*:First-Child::AFTER,
+	*.modal-root__modal:Not(.media-modal)::AFTER,
+	*+*.scrollable:Not(.scrollable--flex)>*::AFTER,
+	*.drawer__inner>*:Last-Child::AFTER {
 		Position: Absolute;
 		Inset: 0;
-		Background: Grey;
+		Background: Var(--Principal-Colour-Override);
 		Mix-Blend-Mode: Color;
 		Pointer-Events: None;
-		Z-Index: 102400;
+		Z-Index: 7;
 		Content: "";
 	}
-	.scrollable { Z-Index: 102401 }
-	.scrollable>* { Position: Relative }
-	*[style*="background-image"],
-	img { Z-Index: 102402; }
+	*+*.scrollable:Not(.scrollable--flex)>*,
+	*.modal-root__modal { Position: Relative }
+	*.scrollable,
+	*.react-swipeable-view-container,
+	*.emoji-mart-scroll,
+	*[style*=background],
+	img,
+	video {
+		Position: Relative;
+		Z-Index: 8!IMPORTANT;
+	}
+	*.search-popout,
+	*.drawer__pager,
+	*.drawer__inner,
+	*.drawer__backdrop,
+	*.dropdown-menu,
+	*.privacy-dropdown__dropdown,
+	*.emoji-picker-dropdown__menu,
+	*.modal-root { Z-Index: 9!IMPORTANT }
+	body>*:First-Child::AFTER,
+	*.drawer__inner>*:Last-Child::AFTER {
+		Display: Block;
+		Position: Sticky;
+		Top: Auto;
+		Margin-Top: -100VH;
+		Min-Height: 100VH;
+		Max-Height: 100VH;
+	}
 }
 @-moz-document Domain(weirder.earth) {
-	html::AFTER,
-	.scrollable>*::AFTER { Background: #57534C }
+	html { --Principal-Colour-Override: #57534C }
 }
 @-moz-document Domain(wandering.shop) {
-	html::AFTER,
-	.scrollable>*::AFTER { Background: #1AACEB }
+	html { --Principal-Colour-Override: #1AACEB }
 }
 @-moz-document Domain(fandom.ink) {
-	html::AFTER,
-	.scrollable>*::AFTER { Background: #EB9100 }
+	html { --Principal-Colour-Override: #EB9100 }
 }
 @-moz-document Domain(glitch.social) {
-	html::AFTER,
-	.scrollable>*::AFTER { Background: #50D952 }
+	html { --Principal-Colour-Override: #50D952 }
 }
 @-moz-document Domain(botsin.space) {
-	html::AFTER,
-	.scrollable>*::AFTER { Background: #FAE13E }
+	html { --Principal-Colour-Override: #FAE13E }
 }
